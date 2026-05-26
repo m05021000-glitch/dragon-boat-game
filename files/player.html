@@ -163,7 +163,7 @@
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getDatabase, ref, onValue, set, get } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getDatabase, ref, onValue, set, get, onDisconnect } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCF1gimashj-HIiGgaKH1ln1rkik9iX51g",
@@ -176,6 +176,12 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db  = getDatabase(app);
+
+// 寫入 presence，讓 host 知道有多少人進來
+const uid = Math.random().toString(36).slice(2);
+const presRef = ref(db, `game/presence/${uid}`);
+set(presRef, true);
+onDisconnect(presRef).remove();
 
 const CORRECT = {1:'b', 2:'a', 3:'b', 4:'a', 5:'b'};
 
