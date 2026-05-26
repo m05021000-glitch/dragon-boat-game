@@ -73,6 +73,19 @@
   #pageFinal h2{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:900;color:var(--gold);margin:14px 0 10px;line-height:1.4;}
   #pageFinal .final-body{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.9;max-width:300px;white-space:pre-line;}
   #pageFinal .score-badge{margin-top:18px;background:rgba(201,151,58,0.15);border:1px solid rgba(201,151,58,0.4);border-radius:12px;padding:10px 18px;font-size:13px;color:rgba(255,255,255,0.55);}
+  #pageSouvenir{background:rgba(0,0,0,0.15);}
+  #pageSouvenir .sv-ending{background:rgba(201,151,58,0.12);border:1px solid rgba(201,151,58,0.35);border-radius:14px;padding:14px 18px;width:100%;max-width:320px;text-align:center;margin-bottom:14px;}
+  #pageSouvenir .sv-emoji{font-size:40px;margin-bottom:6px;}
+  #pageSouvenir .sv-etitle{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:900;color:var(--gold);margin-bottom:4px;}
+  #pageSouvenir .sv-ebody{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.7;white-space:pre-line;}
+  #pageSouvenir .grow-mini-title{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:8px;text-align:center;}
+  #pageSouvenir .grow-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:320px;margin-bottom:12px;}
+  #pageSouvenir .grow-cell{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 6px;text-align:center;}
+  #pageSouvenir .gl{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:900;color:var(--gold);}
+  #pageSouvenir .gw{font-size:10px;color:rgba(255,255,255,0.45);margin:2px 0 4px;}
+  #pageSouvenir .gq{font-size:10px;color:var(--gold2);line-height:1.4;}
+  #pageSouvenir .sv-tagline{font-family:'Noto Serif TC',serif;font-size:14px;font-weight:700;color:var(--gold2);text-align:center;margin-bottom:12px;}
+  #pageSouvenir .sv-hint{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;animation:pulse 2s infinite;}
 
   @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
@@ -129,6 +142,23 @@
   <h2 id="finalTitle"></h2>
   <p class="final-body" id="finalBody"></p>
   <div class="score-badge" id="scoreBadge"></div>
+</div>
+
+<div class="page" id="pageSouvenir">
+  <div class="sv-ending" id="svEnding">
+    <div class="sv-emoji" id="svEmoji">🏆</div>
+    <div class="sv-etitle" id="svEtitle"></div>
+    <div class="sv-ebody" id="svEbody"></div>
+  </div>
+  <div class="grow-mini-title">🌱 GROW Model — 帶走這四個問法</div>
+  <div class="grow-row">
+    <div class="grow-cell"><div class="gl">G</div><div class="gw">Goal</div><div class="gq">「你想達到什麼？」</div></div>
+    <div class="grow-cell"><div class="gl">R</div><div class="gw">Reality</div><div class="gq">「現在的狀況是什麼？」</div></div>
+    <div class="grow-cell"><div class="gl">O</div><div class="gw">Options</div><div class="gq">「有哪些可能的做法？」</div></div>
+    <div class="grow-cell"><div class="gl">W</div><div class="gw">Will</div><div class="gq">「你決定做什麼？」</div></div>
+  </div>
+  <div class="sv-tagline">問對一句話，他就會自己動起來。</div>
+  <div class="sv-hint">📸 截圖留念</div>
 </div>
 
 <script type="module">
@@ -316,7 +346,24 @@ onValue(ref(db,'game/state'), async (snap) => {
     showPage('pageFinal');
     return;
   }
-});
+
+  if (phase==='souvenir') {
+    const votesSnap = await get(ref(db,'game/votes'));
+    const allVotes = votesSnap.val()||{};
+    let correctCount = 0;
+    for (let i=1;i<=5;i++) {
+      const rv = allVotes[`round${i}`]||{a:0,b:0};
+      const correct = CORRECT[i];
+      const wrong = correct==='a'?'b':'a';
+      if ((rv[correct]||0) >= (rv[wrong]||0)) correctCount++;
+    }
+    const ending = ENDINGS.find(e => correctCount >= e.min);
+    document.getElementById('svEmoji').textContent = ending.emoji;
+    document.getElementById('svEtitle').textContent = ending.title;
+    document.getElementById('svEbody').textContent = ending.body;
+    showPage('pageSouvenir');
+    return;
+  }
 
 document.getElementById('btnA').addEventListener('click', () => castVote('a'));
 document.getElementById('btnB').addEventListener('click', () => castVote('b'));
