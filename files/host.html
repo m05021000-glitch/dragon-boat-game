@@ -326,6 +326,9 @@
     <div class="qr-step"><span>👆</span>選 A 或 B</div>
     <div class="qr-step"><span>🎯</span>看即時結果</div>
   </div>
+  <div id="joinCount" style="margin-top:20px;font-family:'Noto Serif TC',serif;font-size:28px;font-weight:900;color:var(--gold);">
+    已加入 <span id="joinNum">0</span> 人
+  </div>
 </div>
 
 <!-- GAME INTRO -->
@@ -723,6 +726,15 @@ for (let r=1;r<=5;r++) {
     updateBars(r, v.a||0, v.b||0);
   });
 }
+
+// 即時人數：監聽 presence
+onValue(ref(db,'game/presence'), snap => {
+  const data = snap.val()||{};
+  const count = Object.keys(data).length;
+  const joinNum = document.getElementById('joinNum');
+  if (joinNum) joinNum.textContent = count;
+  document.getElementById('liveCount').textContent = '👥 ' + count;
+});
 
 function updateBars(round, a, b) {
   const total = a+b;
