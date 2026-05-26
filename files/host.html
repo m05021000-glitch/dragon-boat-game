@@ -640,9 +640,9 @@ const ENDINGS = [
 const SLIDES = [
   { id:'s0',        label:'封面',       note:'按「下一頁」開始',                    phase:null,                   action:'下一頁 →' },
   { id:'s1',        label:'議程',       note:'說明三段架構',                        phase:null,                   action:'下一頁 →' },
-  { id:'s2',        label:'開場台詞',   note:'介紹阿發和阿國',                      phase:null,                   action:'下一頁 →' },
   { id:'s3',        label:'第一段',     note:'邀請分享者上場',                      phase:null,                   action:'下一頁 →' },
-  { id:'sChar',      label:'人物介紹',   note:'介紹阿發和阿國',                     phase:null,                   action:'下一頁 →' },
+  { id:'sChar',     label:'人物介紹',   note:'介紹阿發和阿國，銜接第二段',           phase:null,                   action:'下一頁 →' },
+  { id:'s2',        label:'開場台詞',   note:'說完後帶大家掃QR',                    phase:null,                   action:'下一頁 →' },
   { id:'sQR',       label:'加入遊戲',   note:'讓大家掃 QR Code 加入',               phase:{phase:'wait',round:1}, action:'開始遊戲 →' },
   { id:'sGameIntro',label:'遊戲說明',   note:'說明五關規則',                        phase:null,                   action:'進入關卡一 →' },
   { id:'sC1',       label:'關卡一情境', note:'念完情境後按「開放投票」',             phase:{phase:'show',round:1}, action:'開放投票 →' },
@@ -659,11 +659,11 @@ const SLIDES = [
   { id:'sR4',       label:'關卡四結局', note:'龍舟動畫自動跑',                      phase:{phase:'result',round:4},action:'下一關 →' },
   { id:'sC5',       label:'關卡五情境', note:'念完情境後按「開放投票」',             phase:{phase:'show',round:5}, action:'開放投票 →' },
   { id:'sV5',       label:'關卡五投票', note:'票數即時更新中',                      phase:{phase:'vote',round:5}, action:'揭曉結局 →' },
-  { id:'sR5',       label:'關卡五結局', note:'最後一關結局',                        phase:{phase:'result',round:5},action:'公布金句 →' },
+  { id:'sR5',       label:'關卡五結局', note:'最後一關結局',                        phase:{phase:'result',round:5},action:'公布總結局 →' },
+  { id:'sFinal',    label:'總結局',     note:'根據五關正確票數自動決定結局',         phase:{phase:'final',round:5},action:'公布金句 →' },
   { id:'sLanding',  label:'金句',       note:'停留幾秒讓大家記下來',               phase:null,                   action:'GROW教學 →' },
-  { id:'sGROW',     label:'GROW教學',   note:'帶大家看四個問法',                   phase:null,                   action:'公布總結局 →' },
-  { id:'sFinal',    label:'總結局',     note:'根據五關正確票數自動決定結局',         phase:{phase:'final',round:5},action:'下一頁 →' },
-  { id:'sS3',       label:'第三段',     note:'邀請兩位主管上場',                   phase:null,                   action:'下一頁 →' },
+  { id:'sGROW',     label:'GROW教學',   note:'帶大家看四個問法',                   phase:{phase:'souvenir',round:5}, action:'下一頁 →' },
+  { id:'sS3',       label:'第三段',     note:'邀請主管上場',                       phase:null,                   action:'下一頁 →' },
   { id:'sClose',    label:'結尾',       note:'主持人說結語，端午節快樂！',           phase:null,                   action:'完成 ✓' },
 ];
 
