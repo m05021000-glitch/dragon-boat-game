@@ -11,30 +11,24 @@
   html,body{width:100%;min-height:100vh;background:var(--dark);color:var(--white);font-family:'Noto Sans TC',sans-serif;overflow-x:hidden;}
   #riverBg{position:fixed;inset:0;z-index:0;pointer-events:none;}
   #riverBg canvas{width:100%;height:100%;}
-  .page{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;display:none;}
+  .page{position:relative;z-index:1;min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;}
   .page.active{display:flex;}
-
-  /* WAIT */
   #pageWait .dragon{font-size:80px;animation:float 3s ease-in-out infinite;}
   #pageWait h1{font-family:'Noto Serif TC',serif;font-size:28px;font-weight:900;color:var(--gold);margin:16px 0 8px;}
   #pageWait p{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;}
   #pageWait .pulse-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;margin-top:20px;animation:pulse 1.5s infinite;}
-
-  /* SHOW (情境頁) */
   #pageShow .round-badge{font-size:12px;font-weight:700;letter-spacing:2px;padding:5px 18px;border-radius:20px;margin-bottom:16px;display:inline-block;background:var(--red);}
-  #pageShow .show-title{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:900;margin-bottom:18px;line-height:1.4;color:var(--gold);}
-  #pageShow .situation{background:rgba(255,255,255,0.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 16px;font-size:14px;line-height:1.9;color:rgba(255,255,255,0.85);margin-bottom:16px;text-align:left;}
+  #pageShow .show-title{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:900;margin-bottom:16px;line-height:1.4;color:var(--gold);}
+  #pageShow .situation{background:rgba(255,255,255,0.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:13px 15px;font-size:13px;line-height:1.9;color:rgba(255,255,255,0.85);margin-bottom:14px;text-align:left;}
   #pageShow .situation .scene-tag{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:2px;margin-bottom:6px;display:block;}
   #pageShow .wait-vote{font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-top:10px;animation:pulse 2s infinite;}
-
-  /* VOTE */
-  #pageVote .round-badge{font-size:12px;font-weight:700;letter-spacing:2px;padding:5px 18px;border-radius:20px;margin-bottom:16px;display:inline-block;background:var(--red);}
-  #pageVote .q-title{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:900;margin-bottom:16px;line-height:1.4;}
-  #pageVote .situation{background:rgba(255,255,255,0.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:12px 14px;font-size:13px;line-height:1.8;color:rgba(255,255,255,0.8);margin-bottom:20px;text-align:left;}
-  #pageVote .situation .scene-tag{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:2px;margin-bottom:6px;display:block;}
-  .vote-btn{width:100%;padding:16px 18px;border-radius:14px;border:2px solid transparent;font-size:15px;font-family:'Noto Sans TC',sans-serif;font-weight:700;cursor:pointer;margin-bottom:12px;text-align:left;line-height:1.5;transition:transform 0.15s;position:relative;}
+  #pageVote .round-badge{font-size:12px;font-weight:700;letter-spacing:2px;padding:5px 18px;border-radius:20px;margin-bottom:14px;display:inline-block;background:var(--red);}
+  #pageVote .q-title{font-family:'Noto Serif TC',serif;font-size:19px;font-weight:900;margin-bottom:14px;line-height:1.4;}
+  #pageVote .situation{background:rgba(255,255,255,0.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:11px 13px;font-size:12px;line-height:1.8;color:rgba(255,255,255,0.8);margin-bottom:18px;text-align:left;}
+  #pageVote .situation .scene-tag{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:2px;margin-bottom:5px;display:block;}
+  .vote-btn{width:100%;padding:15px 16px;border-radius:14px;border:2px solid transparent;font-size:14px;font-family:'Noto Sans TC',sans-serif;font-weight:700;cursor:pointer;margin-bottom:11px;text-align:left;line-height:1.5;transition:transform 0.15s;}
   .vote-btn:active{transform:scale(0.97);}
-  .vote-btn .btn-letter{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;font-size:13px;font-weight:900;margin-right:10px;flex-shrink:0;vertical-align:middle;}
+  .vote-btn .btn-letter{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;border-radius:50%;font-size:12px;font-weight:900;margin-right:9px;flex-shrink:0;vertical-align:middle;}
   .btn-a{background:rgba(139,26,26,0.4);border-color:rgba(178,34,34,0.6);color:var(--white);}
   .btn-a .btn-letter{background:var(--red);}
   .btn-b{background:rgba(26,122,110,0.4);border-color:rgba(42,168,152,0.6);color:var(--white);}
@@ -43,37 +37,29 @@
   .vote-btn.selected{opacity:1!important;}
   .btn-a.selected{border-color:var(--red2);box-shadow:0 0 0 3px rgba(178,34,34,0.25);}
   .btn-b.selected{border-color:var(--teal2);box-shadow:0 0 0 3px rgba(42,168,152,0.25);}
-
-  /* DONE */
   #pageDone .big-emoji{font-size:72px;animation:bounceIn 0.6s both;}
   #pageDone h2{font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:var(--gold);margin:16px 0 10px;}
   #pageDone p{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.7;}
   #pageDone .your-vote{margin-top:20px;background:rgba(255,255,255,0.07);border-radius:12px;padding:14px 20px;font-size:14px;}
   #pageDone .your-vote span{font-weight:700;color:var(--gold2);}
-
-  /* RESULT */
   #pageResult h2{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:900;color:var(--gold);margin-bottom:4px;}
-  #pageResult .result-sub{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:20px;}
-  .mini-result{width:100%;border-radius:14px;padding:16px;margin-bottom:12px;border:2px solid transparent;text-align:left;transition:opacity 0.5s;}
+  #pageResult .result-sub{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:18px;}
+  .mini-result{width:100%;border-radius:14px;padding:15px;margin-bottom:11px;border:2px solid transparent;text-align:left;transition:opacity 0.5s;}
   .mini-result.hidden{display:none;}
   .mini-result-a{background:rgba(139,26,26,0.3);border-color:rgba(178,34,34,0.5);}
   .mini-result-b{background:rgba(26,122,110,0.3);border-color:rgba(42,168,152,0.5);}
-  .mini-result.winner{border-width:2.5px;}
-  .mini-result-a.winner{border-color:var(--red2);box-shadow:0 0 16px rgba(178,34,34,0.3);}
-  .mini-result-b.winner{border-color:var(--teal2);box-shadow:0 0 16px rgba(42,168,152,0.3);}
-  .mini-result .r-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
-  .mini-result .r-letter{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;}
+  .mini-result.winner-a{border-color:var(--red2);box-shadow:0 0 16px rgba(178,34,34,0.3);}
+  .mini-result.winner-b{border-color:var(--teal2);box-shadow:0 0 16px rgba(42,168,152,0.3);}
+  .mini-result .r-header{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
+  .mini-result .r-letter{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;}
   .mini-result-a .r-letter{background:var(--red);}
   .mini-result-b .r-letter{background:var(--teal);}
-  .mini-result .r-pct{font-size:24px;font-weight:900;margin-left:auto;}
-  .mini-result .r-outcome{font-size:13px;line-height:1.6;color:rgba(255,255,255,0.85);}
-
-  /* FINAL */
+  .mini-result .r-pct{font-size:22px;font-weight:900;margin-left:auto;}
+  .mini-result .r-outcome{font-size:12px;line-height:1.6;color:rgba(255,255,255,0.85);}
   #pageFinal .final-emoji{font-size:72px;animation:bounceIn 0.6s both;}
   #pageFinal h2{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:900;color:var(--gold);margin:14px 0 10px;line-height:1.4;}
   #pageFinal .final-body{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.9;max-width:300px;white-space:pre-line;}
   #pageFinal .score-badge{margin-top:18px;background:rgba(201,151,58,0.15);border:1px solid rgba(201,151,58,0.4);border-radius:12px;padding:10px 18px;font-size:13px;color:rgba(255,255,255,0.55);}
-  #pageSouvenir{background:rgba(0,0,0,0.15);}
   #pageSouvenir .sv-ending{background:rgba(201,151,58,0.12);border:1px solid rgba(201,151,58,0.35);border-radius:14px;padding:14px 18px;width:100%;max-width:320px;text-align:center;margin-bottom:14px;}
   #pageSouvenir .sv-emoji{font-size:40px;margin-bottom:6px;}
   #pageSouvenir .sv-etitle{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:900;color:var(--gold);margin-bottom:4px;}
@@ -86,7 +72,6 @@
   #pageSouvenir .gq{font-size:10px;color:var(--gold2);line-height:1.4;}
   #pageSouvenir .sv-tagline{font-family:'Noto Serif TC',serif;font-size:14px;font-weight:700;color:var(--gold2);text-align:center;margin-bottom:12px;}
   #pageSouvenir .sv-hint{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;animation:pulse 2s infinite;}
-
   @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
   @keyframes bounceIn{0%{opacity:0;transform:scale(0.5);}70%{transform:scale(1.15);}100%{opacity:1;transform:scale(1);}}
@@ -128,11 +113,11 @@
   <h2>⚡ 結局揭曉</h2>
   <p class="result-sub" id="resultRoundLabel"></p>
   <div class="mini-result mini-result-a" id="mResA">
-    <div class="r-header"><div class="r-letter">A</div><div style="font-size:12px;flex:1" id="mOptA"></div><div class="r-pct" id="mPctA">—</div></div>
+    <div class="r-header"><div class="r-letter">A</div><div style="font-size:11px;flex:1" id="mOptA"></div><div class="r-pct" id="mPctA">—</div></div>
     <div class="r-outcome" id="mOutcomeA"></div>
   </div>
   <div class="mini-result mini-result-b" id="mResB">
-    <div class="r-header"><div class="r-letter">B</div><div style="font-size:12px;flex:1" id="mOptB"></div><div class="r-pct" id="mPctB">—</div></div>
+    <div class="r-header"><div class="r-letter">B</div><div style="font-size:11px;flex:1" id="mOptB"></div><div class="r-pct" id="mPctB">—</div></div>
     <div class="r-outcome" id="mOutcomeB"></div>
   </div>
 </div>
@@ -145,7 +130,7 @@
 </div>
 
 <div class="page" id="pageSouvenir">
-  <div class="sv-ending" id="svEnding">
+  <div class="sv-ending">
     <div class="sv-emoji" id="svEmoji">🏆</div>
     <div class="sv-etitle" id="svEtitle"></div>
     <div class="sv-ebody" id="svEbody"></div>
@@ -157,7 +142,7 @@
     <div class="grow-cell"><div class="gl">O</div><div class="gw">Options</div><div class="gq">「有哪些可能的做法？」</div></div>
     <div class="grow-cell"><div class="gl">W</div><div class="gw">Will</div><div class="gq">「你決定做什麼？」</div></div>
   </div>
-  <div class="sv-tagline">問對一句話，他就會自己動起來。</div>
+  <div class="sv-tagline">問對一句話，行動就會默默展開。</div>
   <div class="sv-hint">📸 截圖留念</div>
 </div>
 
@@ -177,7 +162,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db  = getDatabase(app);
 
-// 寫入 presence，讓 host 知道有多少人進來
+// Presence 計數
 const uid = Math.random().toString(36).slice(2);
 const presRef = ref(db, `game/presence/${uid}`);
 set(presRef, true);
@@ -185,64 +170,61 @@ onDisconnect(presRef).remove();
 
 const CORRECT = {1:'b', 2:'a', 3:'b', 4:'a', 5:'b'};
 
-// 關卡二、四的選項順序對調（A才是教練式）
 const ROUNDS = [
   { badge:'關卡一', title:'賽前練習——阿發手在抖',
     scene:'練習開始前，阿發一個人站在岸邊看著水面，手在抖。阿國走過來說「你這樣划下去會害死大家」然後走掉。你走過去……',
     optA:'「別理他！你可以的！加油！」',
-    optB:'「去年你划到一半找到感覺那一段，你還記得嗎？」',
-    outcomeA:'😬 阿發用力點頭，第一下划太猛，槳飛出去打到阿國後腦勺。阿國轉頭：「我就說吧。」',
-    outcomeB:'🌊 阿發愣了一下，嘴角動了。「記得，那次好像突然懂了。」手慢慢不抖了。' },
+    optB:'「去年你說你好像找到手感，那一次的狀態你還記得嗎？」',
+    outcomeA:'😬 阿發用力點頭，第一下划太猛，槳揮太高打到阿國後腦勺。阿國轉頭：「你來參賽就是個錯誤!」',
+    outcomeB:'🌊 阿發愣了一下，嘴角動了。「記得，那次好像突然就開竅了。」手慢慢不抖了。' },
   { badge:'關卡二', title:'出發前——阿國搶位置',
-    scene:'上船前，阿發有自己練習的位置。阿國突然說「你坐那裡影響平衡，換過來」直接把阿發擠走。阿發看著你。',
+    scene:'上船前，阿發有自己練習的位置。阿國突然說「你坐那裡會影響到我，換過來」直接把阿發擠走。阿發看著你。',
     optA:'「阿發在那個位置練很久了，我一直有在觀察他的進步」',
     optB:'「阿國比較有經驗，你就換一下吧」',
-    outcomeA:'💪 阿國哼了一聲沒再說話。阿發沒說什麼，但上船的時候腰桿直了一點。',
-    outcomeB:'😔 阿發換了。新位置不順，划到一半一直撞阿國的槳。阿國：「你是故意的嗎？」阿發：「……對不起。」' },
-  { badge:'關卡三', title:'比賽中途——阿發僵掉了',
-    scene:'划到一半，阿國突然大喊：「左邊的人在幹嘛！廢物！」阿發是左邊的人。整個人僵掉，槳停在水裡不動。',
-    optA:'「阿發專心！不要管他！划！」',
-    optB:'「阿發，怎麼了？」',
-    outcomeA:'🌀 阿發猛力一划，方向歪掉，船開始轉圈。對手超車。鼓手笑場，鼓點全亂。',
-    outcomeB:'🎯 阿發看了你一眼，深呼吸，槳重新動了。船速回來。阿國還在罵，但沒有人在聽了。' },
-  { badge:'關卡四', title:'輸了之後——阿國開口了',
-    scene:'比賽結束，輸了。阿國說：「就是你們兩個拖累整條船，划那麼爛還敢來比賽。」然後走掉。阿發低頭收東西。',
-    optA:'「今天整場划下來，你覺得哪一段你划得還不錯？」',
-    optB:'「別理他，阿國就這樣，大家都知道」',
-    outcomeA:'🙂 阿發想了一下，「第二段有跟上。」說完自己有點意外。阿國那句話的重量輕了一點。他抬起頭了。',
-    outcomeB:'📱 阿發說謝謝，眼眶紅了。後來傳訊息：「我下次不來了。」原因：手腕不舒服。' },
+    outcomeA:'💪 阿國哼了一聲沒再說話。阿發沒說什麼，但上船的時候更有自信了一點。',
+    outcomeB:'😔 阿發換了。新位置不順，一直卡到阿國的槳。阿國：「你是故意的嗎？」阿發：「……對不起。」' },
+  { badge:'關卡三', title:'賽事不順——阿發僵掉了',
+    scene:'今天比賽結果不太好，阿國突然大喊：「左邊的人今天在幹嘛啊！亂划一通！」阿發剛好就是左邊的人。整個人僵掉不敢動。',
+    optA:'「阿國你別太過份了！阿發還是新手啊！」',
+    optB:'「阿發，我感覺到你現在可能需要一點時間？」',
+    outcomeA:'😱 阿發持續低頭不語，阿國：「你看你看，他又來了。」',
+    outcomeB:'🎯 阿發看了你一眼，深呼吸，重新挺直腰桿，說：「今天的確是我失誤了。」' },
+  { badge:'關卡四', title:'輸了之後——阿國的情緒',
+    scene:'比賽結束，輸了。阿國說：「隊長，你不要再放任阿發拖累我們，划那麼爛還敢來比賽。」阿發低頭默默收東西。',
+    optA:'「我理解你為隊伍著想，你總能直指不足。同時我也在想，怎麼做才能讓大家感受到你的心意？」',
+    optB:'「阿國！你才該管管你的臭脾氣！」',
+    outcomeA:'🙂 阿國想了一下：「我沒想過大家要怎麼感受。」說完自己都有點意外，摸摸鼻子走掉了。',
+    outcomeB:'😤 阿國氣著大喊：「你們都沒有用，一群拖油瓶。」氣到直接離開現場。' },
   { badge:'關卡五', title:'散場——阿發背包包要走了',
     scene:'活動快結束，阿發已經背好包包，正在往出口走。你叫住他。',
     optA:'「下次練習要來喔！不要再請假了！」',
     optB:'「你覺得下次你想練哪個部分？」',
-    outcomeA:'📋 阿發說「好啦好啦」。下次練習出席紀錄——阿發：請假。請假原因：手腕不舒服。（再次）',
-    outcomeB:'🤝 阿發停下來想了一下，「體力吧，後半段我沒力了。」你說「那我們一起練？」他說好。這個好，跟平常不一樣。' },
+    outcomeA:'📋 阿發說「好啦好啦」。結果下次練習，阿發還是請假了。',
+    outcomeB:'🤝 阿發停下來想了一下，「體力吧，後半段我沒力了。」你說「那我們一起練練基本功？」阿發笑著說好，這次不會再請假了。' },
 ];
 
 const ENDINGS = [
-  { min:4, emoji:'🏆', title:'阿發說「下次還來」', body:'頭抬起來，你們約好一起練體力。\n阿國在遠處哼了一聲，\n沒有人理他。' },
-  { min:2, emoji:'🌊', title:'有點不一樣了', body:'最後那個「好」說得有點猶豫，\n但他說了。\n一點點，也是不一樣。' },
-  { min:0, emoji:'😶', title:'阿發禮貌說謝謝，走了', body:'下次練習：請假。\n請假原因：手腕不舒服。\n\n問對一句話，他就會自己動起來。\n——你們還有機會。' },
+  { min:4, emoji:'🏆', title:'阿發說「下次還來」', body:'頭抬起來，你們約好一起練體力。' },
+  { min:2, emoji:'🌊', title:'有點不一樣了', body:'最後那個「好」說得有點猶豫，\n但就算只有一點點，也是不一樣的展開了。' },
+  { min:0, emoji:'😶', title:'阿發禮貌說謝謝，走了', body:'下次練習：請假。\n請假原因：手腕不舒服。\n\n問對一句話，行動就會默默展開。\n——學習教練式對話將有效改善情境。' },
 ];
 
-let myVotes = {}; // round -> 'a' or 'b'
-let lastPhase = null;
-let lastRound = null;
+let myVotes = {};
 
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
-function renderShowPage(roundIdx) {
-  const r = ROUNDS[roundIdx];
+function renderShowPage(i) {
+  const r = ROUNDS[i];
   document.getElementById('showBadge').textContent = r.badge;
   document.getElementById('showTitle').textContent = r.title;
   document.getElementById('showSituation').innerHTML = `<span class="scene-tag">📍 情境</span>${r.scene}`;
 }
 
-function renderVotePage(roundIdx) {
-  const r = ROUNDS[roundIdx];
+function renderVotePage(i) {
+  const r = ROUNDS[i];
   document.getElementById('roundBadge').textContent = r.badge;
   document.getElementById('qTitle').textContent = r.title;
   document.getElementById('qSituation').innerHTML = `<span class="scene-tag">📍 情境</span>${r.scene}`;
@@ -250,15 +232,15 @@ function renderVotePage(roundIdx) {
   document.getElementById('optB').textContent = r.optB;
   document.getElementById('btnA').className = 'vote-btn btn-a';
   document.getElementById('btnB').className = 'vote-btn btn-b';
-  const myVote = myVotes[roundIdx+1];
+  const myVote = myVotes[i+1];
   if (myVote) {
     document.getElementById('btn'+myVote.toUpperCase()).classList.add('selected');
     document.getElementById(myVote==='a'?'btnB':'btnA').classList.add('voted');
   }
 }
 
-async function renderResultPage(roundIdx, votes) {
-  const r = ROUNDS[roundIdx];
+async function renderResultPage(i, votes) {
+  const r = ROUNDS[i];
   const a = votes.a||0, b = votes.b||0;
   const total = a+b;
   const pA = total>0 ? Math.round(a/total*100) : 0;
@@ -266,7 +248,6 @@ async function renderResultPage(roundIdx, votes) {
   const tie = (a===b);
   const winA = !tie && a>b;
   const winB = !tie && b>a;
-
   document.getElementById('resultRoundLabel').textContent = r.badge + ' 結果';
   document.getElementById('mOptA').textContent = r.optA;
   document.getElementById('mOptB').textContent = r.optB;
@@ -274,12 +255,23 @@ async function renderResultPage(roundIdx, votes) {
   document.getElementById('mPctB').textContent = total>0 ? pB+'%' : '—';
   document.getElementById('mOutcomeA').textContent = r.outcomeA;
   document.getElementById('mOutcomeB').textContent = r.outcomeB;
-
-  // 只顯示贏的；同票兩邊都顯示
   document.getElementById('mResA').classList.toggle('hidden', winB);
   document.getElementById('mResB').classList.toggle('hidden', winA);
-  document.getElementById('mResA').classList.toggle('winner', winA||tie);
-  document.getElementById('mResB').classList.toggle('winner', winB||tie);
+  document.getElementById('mResA').classList.toggle('winner-a', winA||tie);
+  document.getElementById('mResB').classList.toggle('winner-b', winB||tie);
+}
+
+async function getEnding() {
+  const snap = await get(ref(db,'game/votes'));
+  const allVotes = snap.val()||{};
+  let correctCount = 0;
+  for (let i=1;i<=5;i++) {
+    const rv = allVotes[`round${i}`]||{a:0,b:0};
+    const correct = CORRECT[i];
+    const wrong = correct==='a'?'b':'a';
+    if ((rv[correct]||0) >= (rv[wrong]||0)) correctCount++;
+  }
+  return { ending: ENDINGS.find(e => correctCount >= e.min), correctCount };
 }
 
 async function castVote(side) {
@@ -287,15 +279,12 @@ async function castVote(side) {
   const state = stateSnap.val()||{};
   const round = state.round||1;
   if (myVotes[round]) return;
-
   myVotes[round] = side;
   document.getElementById('btn'+side.toUpperCase()).classList.add('selected');
   document.getElementById(side==='a'?'btnB':'btnA').classList.add('voted');
-
   const voteRef = ref(db,`game/votes/round${round}/${side}`);
   const snap = await get(voteRef);
   await set(voteRef, (snap.val()||0)+1);
-
   const r = ROUNDS[round-1];
   document.getElementById('yourVoteLabel').textContent =
     side==='a' ? `A — ${r.optA.substring(0,20)}…` : `B — ${r.optB.substring(0,20)}…`;
@@ -305,76 +294,40 @@ async function castVote(side) {
 onValue(ref(db,'game/state'), async (snap) => {
   const state = snap.val();
   if (!state) { showPage('pageWait'); return; }
-
   const phase = state.phase||'wait';
   const round = state.round||1;
 
-  // 換關時重置投票狀態
-  if (round !== lastRound) lastRound = round;
-
   if (phase==='wait') { showPage('pageWait'); return; }
-
-  if (phase==='show') {
-    renderShowPage(round-1);
-    showPage('pageShow');
-    return;
-  }
-
+  if (phase==='show') { renderShowPage(round-1); showPage('pageShow'); return; }
   if (phase==='vote') {
     if (myVotes[round]) { showPage('pageDone'); return; }
-    renderVotePage(round-1);
-    showPage('pageVote');
-    return;
+    renderVotePage(round-1); showPage('pageVote'); return;
   }
-
   if (phase==='result') {
     const vSnap = await get(ref(db,`game/votes/round${round}`));
     await renderResultPage(round-1, vSnap.val()||{a:0,b:0});
-    showPage('pageResult');
-    return;
+    showPage('pageResult'); return;
   }
-
   if (phase==='final') {
-    const votesSnap = await get(ref(db,'game/votes'));
-    const allVotes = votesSnap.val()||{};
-    let correctCount = 0;
-    for (let i=1;i<=5;i++) {
-      const rv = allVotes[`round${i}`]||{a:0,b:0};
-      const correct = CORRECT[i];
-      const wrong = correct==='a'?'b':'a';
-      if ((rv[correct]||0) >= (rv[wrong]||0)) correctCount++;
-    }
-    const ending = ENDINGS.find(e => correctCount >= e.min);
+    const { ending, correctCount } = await getEnding();
     document.getElementById('finalEmoji').textContent = ending.emoji;
     document.getElementById('finalTitle').textContent = ending.title;
     document.getElementById('finalBody').textContent = ending.body;
     document.getElementById('scoreBadge').textContent = `這場選對了 ${correctCount} 關`;
-    showPage('pageFinal');
-    return;
+    showPage('pageFinal'); return;
   }
-
   if (phase==='souvenir') {
-    const votesSnap = await get(ref(db,'game/votes'));
-    const allVotes = votesSnap.val()||{};
-    let correctCount = 0;
-    for (let i=1;i<=5;i++) {
-      const rv = allVotes[`round${i}`]||{a:0,b:0};
-      const correct = CORRECT[i];
-      const wrong = correct==='a'?'b':'a';
-      if ((rv[correct]||0) >= (rv[wrong]||0)) correctCount++;
-    }
-    const ending = ENDINGS.find(e => correctCount >= e.min);
+    const { ending } = await getEnding();
     document.getElementById('svEmoji').textContent = ending.emoji;
     document.getElementById('svEtitle').textContent = ending.title;
     document.getElementById('svEbody').textContent = ending.body;
-    showPage('pageSouvenir');
-    return;
+    showPage('pageSouvenir'); return;
   }
+});
 
 document.getElementById('btnA').addEventListener('click', () => castVote('a'));
 document.getElementById('btnB').addEventListener('click', () => castVote('b'));
 
-// River canvas
 const canvas = document.getElementById('rc');
 const ctx = canvas.getContext('2d');
 let W,H,t=0;
