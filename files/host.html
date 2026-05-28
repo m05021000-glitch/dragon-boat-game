@@ -22,8 +22,6 @@
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     opacity:0;pointer-events:none;transition:opacity 0.5s;padding:20px 40px 70px;}
   .screen.active{opacity:1;pointer-events:all;}
-
-  /* HOST BAR */
   #hostBar{position:fixed;bottom:0;left:0;right:0;z-index:100;
     background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);
     border-top:1px solid rgba(201,151,58,0.25);
@@ -40,62 +38,39 @@
   #hostNote{flex:1;font-size:11px;color:rgba(255,255,255,0.4);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   #phaseLabel{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;white-space:nowrap;}
   #liveCount{font-size:11px;color:rgba(255,255,255,0.4);white-space:nowrap;}
-
-  /* NAV DOTS */
   #navDots{position:fixed;bottom:54px;left:50%;transform:translateX(-50%);
     display:flex;gap:6px;z-index:99;flex-wrap:wrap;justify-content:center;max-width:90vw;}
-  .ndot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2);
-    cursor:pointer;transition:all 0.3s;}
+  .ndot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;}
   .ndot.active{background:var(--gold);transform:scale(1.5);}
-
-  /* TYPOGRAPHY */
-  .tag{background:var(--gold);color:var(--dark);font-size:12px;font-weight:700;
-    padding:4px 16px;border-radius:20px;letter-spacing:2px;margin-bottom:20px;}
+  .tag{background:var(--gold);color:var(--dark);font-size:12px;font-weight:700;padding:4px 16px;border-radius:20px;letter-spacing:2px;margin-bottom:20px;}
   .sec-emoji{font-size:72px;margin-bottom:16px;}
-  .sec-badge{font-size:12px;font-weight:700;letter-spacing:3px;
-    padding:5px 18px;border-radius:20px;margin-bottom:16px;}
-  .sec-title{font-family:'Noto Serif TC',serif;font-size:clamp(38px,6vw,68px);
-    font-weight:900;text-align:center;}
+  .sec-badge{font-size:12px;font-weight:700;letter-spacing:3px;padding:5px 18px;border-radius:20px;margin-bottom:16px;}
+  .sec-title{font-family:'Noto Serif TC',serif;font-size:clamp(38px,6vw,68px);font-weight:900;text-align:center;}
   .sec-time{font-size:15px;color:rgba(255,255,255,0.45);margin-top:12px;}
-
-  /* COVER */
-  #s0 .dragon-bg{position:absolute;font-size:200px;opacity:0.06;right:-20px;
-    top:50%;transform:translateY(-50%);pointer-events:none;}
-  #s0 h1{font-family:'Noto Serif TC',serif;font-size:clamp(44px,7vw,78px);
-    font-weight:900;text-align:center;line-height:1.2;animation:fadeUp 0.8s 0.3s both;}
+  #s0 .dragon-bg{position:absolute;font-size:200px;opacity:0.06;right:-20px;top:50%;transform:translateY(-50%);pointer-events:none;}
+  #s0 h1{font-family:'Noto Serif TC',serif;font-size:clamp(44px,7vw,78px);font-weight:900;text-align:center;line-height:1.2;animation:fadeUp 0.8s 0.3s both;}
   #s0 h1 span{color:var(--gold);}
   #s0 .sub{font-size:18px;color:rgba(255,255,255,0.6);margin-top:14px;letter-spacing:3px;}
   #s0 .meta{margin-top:36px;display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
   #s0 .meta-item{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.75);}
-  #s0 .meta-item .ico{width:32px;height:32px;border-radius:50%;
-    background:rgba(201,151,58,0.18);border:1px solid rgba(201,151,58,0.4);
-    display:flex;align-items:center;justify-content:center;font-size:15px;}
-
-  /* AGENDA */
+  #s0 .meta-item .ico{width:32px;height:32px;border-radius:50%;background:rgba(201,151,58,0.18);border:1px solid rgba(201,151,58,0.4);display:flex;align-items:center;justify-content:center;font-size:15px;}
   #s1 .agenda-title{font-family:'Noto Serif TC',serif;font-size:36px;font-weight:900;color:var(--gold);margin-bottom:8px;}
   #s1 .agenda-sub{font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:36px;}
   .agenda-cards{display:flex;gap:20px;}
-  .acard{width:190px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
-    border-radius:14px;padding:24px 18px;text-align:center;position:relative;overflow:hidden;}
+  .acard{width:190px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:24px 18px;text-align:center;position:relative;overflow:hidden;}
   .acard .atop{position:absolute;top:0;left:0;right:0;height:4px;}
   .acard .ae{font-size:38px;margin-bottom:12px;display:block;}
   .acard .at{font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:6px;}
   .acard .an{font-family:'Noto Serif TC',serif;font-size:16px;font-weight:700;line-height:1.4;margin-bottom:10px;}
   .acard .am{font-size:12px;color:rgba(255,255,255,0.45);background:rgba(255,255,255,0.08);border-radius:20px;padding:3px 12px;display:inline-block;}
   .agenda-arr{font-size:20px;color:rgba(255,255,255,0.2);align-self:center;}
-
-  /* HOST OPENING */
-  #s2 .host-tag{background:rgba(139,26,26,0.8);border:1px solid var(--red3);
-    font-size:12px;font-weight:700;letter-spacing:3px;padding:5px 18px;border-radius:20px;margin-bottom:24px;}
+  #s2 .host-tag{background:rgba(139,26,26,0.8);border:1px solid var(--red3);font-size:12px;font-weight:700;letter-spacing:3px;padding:5px 18px;border-radius:20px;margin-bottom:24px;}
   .quote-box{max-width:760px;text-align:center;}
   .qmark{font-size:80px;color:var(--gold);opacity:0.35;line-height:0.5;}
   .qtext{font-family:'Noto Serif TC',serif;font-size:clamp(18px,2.6vw,26px);line-height:1.9;font-weight:700;}
   .qtext em{color:var(--gold);font-style:normal;}
-  .host-cue{margin-top:28px;background:rgba(201,151,58,0.1);border:1px solid rgba(201,151,58,0.3);
-    border-radius:10px;padding:14px 24px;font-size:13px;color:rgba(255,255,255,0.65);max-width:580px;text-align:center;}
+  .host-cue{margin-top:28px;background:rgba(201,151,58,0.1);border:1px solid rgba(201,151,58,0.3);border-radius:10px;padding:14px 24px;font-size:13px;color:rgba(255,255,255,0.65);max-width:580px;text-align:center;}
   .host-cue strong{color:var(--gold);}
-
-  /* QR */
   #sQR .qr-title{font-family:'Noto Serif TC',serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--gold);margin-bottom:8px;}
   #sQR .qr-sub{font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:32px;}
   #sQR .qr-wrap{background:white;border-radius:16px;padding:16px;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
@@ -104,54 +79,38 @@
   #sQR .qr-steps{display:flex;gap:20px;margin-top:24px;}
   #sQR .qr-step{background:rgba(255,255,255,0.07);border-radius:10px;padding:12px 16px;font-size:13px;text-align:center;line-height:1.6;}
   #sQR .qr-step span{font-size:22px;display:block;margin-bottom:4px;}
-
-  /* GAME INTRO */
   #sGameIntro .gi-title{font-family:'Noto Serif TC',serif;font-size:clamp(28px,4vw,46px);font-weight:900;color:var(--gold);text-align:center;}
   #sGameIntro .gi-body{max-width:680px;text-align:center;margin-top:16px;font-size:16px;line-height:1.9;color:rgba(255,255,255,0.8);}
   #sGameIntro .gi-body em{color:var(--gold2);font-style:normal;font-weight:700;}
   #sGameIntro .chips{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;justify-content:center;}
-  #sGameIntro .chip{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);
-    border-radius:50px;padding:9px 20px;font-size:13px;display:flex;align-items:center;gap:7px;}
-
-  /* CHALLENGE */
+  #sGameIntro .chip{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:50px;padding:9px 20px;font-size:13px;display:flex;align-items:center;gap:7px;}
   .chal-header{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
   .chal-badge{padding:5px 18px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:2px;}
   .chal-title{font-family:'Noto Serif TC',serif;font-size:clamp(24px,3vw,40px);font-weight:900;text-align:center;margin-bottom:16px;}
-  .situ-box{background:rgba(255,255,255,0.05);border-left:4px solid var(--gold);
-    border-radius:0 12px 12px 0;padding:16px 22px;max-width:740px;
-    font-size:14px;line-height:1.9;color:rgba(255,255,255,0.88);margin-bottom:20px;}
+  .situ-box{background:rgba(255,255,255,0.05);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 22px;max-width:740px;font-size:14px;line-height:1.9;color:rgba(255,255,255,0.88);margin-bottom:20px;}
   .situ-box .stag{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:2px;margin-bottom:6px;display:block;}
   .choices-row{display:flex;gap:16px;}
   .ch-card{flex:1;max-width:320px;border-radius:14px;padding:18px 20px;border:2px solid transparent;}
   .ch-a{background:rgba(139,26,26,0.3);border-color:rgba(178,34,34,0.45);}
   .ch-b{background:rgba(26,122,110,0.3);border-color:rgba(42,168,152,0.45);}
-  .ch-letter{display:inline-flex;align-items:center;justify-content:center;
-    width:32px;height:32px;border-radius:50%;font-size:15px;font-weight:900;margin-bottom:10px;}
+  .ch-letter{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;font-size:15px;font-weight:900;margin-bottom:10px;}
   .ch-a .ch-letter{background:var(--red2);}
   .ch-b .ch-letter{background:var(--teal);}
   .ch-text{font-size:14px;line-height:1.7;}
-
-  /* VOTING */
   .vote-title{font-family:'Noto Serif TC',serif;font-size:28px;font-weight:900;margin-bottom:6px;}
   .vote-sub{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:24px;letter-spacing:2px;}
   .bars-row{display:flex;gap:60px;align-items:flex-end;}
   .bar-wrap{text-align:center;}
-  .bar-track{width:150px;height:260px;background:rgba(255,255,255,0.07);
-    border-radius:12px;position:relative;overflow:hidden;margin-bottom:12px;border:1px solid rgba(255,255,255,0.1);}
-  .bar-fill{position:absolute;bottom:0;left:0;right:0;border-radius:12px 12px 0 0;
-    transition:height 0.7s cubic-bezier(0.34,1.4,0.64,1);height:0%;}
+  .bar-track{width:150px;height:260px;background:rgba(255,255,255,0.07);border-radius:12px;position:relative;overflow:hidden;margin-bottom:12px;border:1px solid rgba(255,255,255,0.1);}
+  .bar-fill{position:absolute;bottom:0;left:0;right:0;border-radius:12px 12px 0 0;transition:height 0.7s cubic-bezier(0.34,1.4,0.64,1);height:0%;}
   .bar-fill-a{background:linear-gradient(180deg,var(--red3),var(--red2));}
   .bar-fill-b{background:linear-gradient(180deg,var(--teal2),var(--teal));}
-  .bar-pct{position:absolute;left:50%;transform:translateX(-50%);
-    bottom:10px;font-size:28px;font-weight:900;text-shadow:0 2px 8px rgba(0,0,0,0.6);}
-  .bar-lbl{display:inline-flex;align-items:center;justify-content:center;
-    width:36px;height:36px;border-radius:50%;font-size:16px;font-weight:900;margin-bottom:5px;}
+  .bar-pct{position:absolute;left:50%;transform:translateX(-50%);bottom:10px;font-size:28px;font-weight:900;text-shadow:0 2px 8px rgba(0,0,0,0.6);}
+  .bar-lbl{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;font-size:16px;font-weight:900;margin-bottom:5px;}
   .lbl-a{background:var(--red2);}
   .lbl-b{background:var(--teal);}
   .bar-cnt{font-size:13px;color:rgba(255,255,255,0.45);}
   .total-count{margin-top:14px;font-size:13px;color:rgba(255,255,255,0.35);}
-
-  /* RESULT */
   .result-title{font-family:'Noto Serif TC',serif;font-size:28px;font-weight:900;color:var(--gold);margin-bottom:4px;text-align:center;}
   .result-sub{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:20px;text-align:center;}
   .boat-row{width:100%;max-width:820px;height:64px;position:relative;margin-bottom:16px;}
@@ -162,8 +121,7 @@
   .boat-obj-a{left:4%;}
   .boat-obj-b{left:4%;bottom:26px;}
   .result-cards{display:flex;gap:18px;max-width:860px;width:92%;}
-  .res-card{flex:1;border-radius:16px;padding:18px;position:relative;overflow:hidden;
-    border:2px solid transparent;transition:opacity 0.5s;}
+  .res-card{flex:1;border-radius:16px;padding:18px;position:relative;overflow:hidden;border:2px solid transparent;transition:opacity 0.5s;}
   .res-card.hidden{opacity:0.15;pointer-events:none;}
   .res-a{background:rgba(139,26,26,0.25);border-color:rgba(178,34,34,0.45);}
   .res-b{background:rgba(26,122,110,0.25);border-color:rgba(42,168,152,0.45);}
@@ -181,43 +139,29 @@
   .res-outcome{font-family:'Noto Serif TC',serif;font-size:14px;font-weight:700;line-height:1.6;}
   .res-a .res-outcome{color:#FF9999;}
   .res-b .res-outcome{color:#80E8D8;}
-
-  /* GROW教學 */
   .grow-screen{background:rgba(0,0,0,0.3);}
   .grow-title{font-family:'Noto Serif TC',serif;font-size:clamp(20px,3vw,32px);font-weight:900;color:var(--gold);text-align:center;margin-bottom:6px;}
   .grow-sub{font-size:13px;color:rgba(255,255,255,0.45);text-align:center;margin-bottom:28px;}
   .grow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:820px;width:92%;}
-  .grow-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
-    border-radius:14px;padding:18px 14px;text-align:center;}
-  .grow-card .g-letter{font-family:'Noto Serif TC',serif;font-size:36px;font-weight:900;
-    color:var(--gold);line-height:1;}
+  .grow-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:18px 14px;text-align:center;}
+  .grow-card .g-letter{font-family:'Noto Serif TC',serif;font-size:36px;font-weight:900;color:var(--gold);line-height:1;}
   .grow-card .g-word{font-size:13px;color:rgba(255,255,255,0.6);margin:4px 0 8px;letter-spacing:1px;}
   .grow-card .g-q{font-size:13px;color:var(--gold2);font-weight:700;line-height:1.5;margin-bottom:8px;}
   .grow-card .g-ex{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.5;font-style:italic;}
-  .grow-tagline{margin-top:22px;font-family:'Noto Serif TC',serif;
-    font-size:clamp(16px,2vw,22px);font-weight:700;color:var(--gold2);text-align:center;}
-
-  /* LANDING */
-  #sLanding .land-phrase{font-family:'Noto Serif TC',serif;
-    font-size:clamp(26px,4vw,48px);font-weight:900;text-align:center;line-height:1.7;max-width:740px;}
+  .grow-tagline{margin-top:22px;font-family:'Noto Serif TC',serif;font-size:clamp(16px,2vw,22px);font-weight:700;color:var(--gold2);text-align:center;}
+  #sLanding .land-phrase{font-family:'Noto Serif TC',serif;font-size:clamp(26px,4vw,48px);font-weight:900;text-align:center;line-height:1.7;max-width:740px;}
   #sLanding .land-phrase em{color:var(--gold);font-style:normal;}
-  #sLanding .land-phrase .hl{display:inline-block;background:linear-gradient(135deg,var(--red2),var(--red));
-    padding:4px 14px;border-radius:8px;margin:0 4px;}
+  #sLanding .land-phrase .hl{display:inline-block;background:linear-gradient(135deg,var(--red2),var(--red));padding:4px 14px;border-radius:8px;margin:0 4px;}
   #sLanding .land-sub{margin-top:24px;font-size:15px;color:rgba(255,255,255,0.5);letter-spacing:2px;}
-
-  /* FINAL */
   #sFinal .f-emoji{font-size:80px;margin-bottom:16px;animation:bounceIn 0.6s both;}
   #sFinal .f-title{font-family:'Noto Serif TC',serif;font-size:clamp(28px,4vw,52px);font-weight:900;color:var(--gold);text-align:center;margin-bottom:16px;}
-  #sFinal .f-body{font-size:18px;color:rgba(255,255,255,0.8);text-align:center;line-height:1.9;max-width:640px;}
+  #sFinal .f-body{font-size:18px;color:rgba(255,255,255,0.8);text-align:center;line-height:1.9;max-width:640px;white-space:pre-line;}
   #sFinal .f-score{margin-top:24px;font-size:14px;color:rgba(255,255,255,0.4);letter-spacing:2px;}
-
-  /* CLOSING */
   #sClose .c-dragon{font-size:80px;animation:float 3s ease-in-out infinite;margin-bottom:16px;}
   #sClose .c-title{font-family:'Noto Serif TC',serif;font-size:clamp(30px,5vw,58px);font-weight:900;color:var(--gold);text-align:center;}
   #sClose .c-sub{font-size:17px;color:rgba(255,255,255,0.65);margin-top:12px;}
   #sClose .c-tag{margin-top:32px;max-width:640px;text-align:center;font-family:'Noto Serif TC',serif;font-size:18px;line-height:1.9;color:rgba(255,255,255,0.82);}
   #sClose .c-tag em{color:var(--gold2);font-style:normal;}
-
   @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
   @keyframes bounceIn{0%{opacity:0;transform:scale(0.5);}70%{transform:scale(1.12);}100%{opacity:1;transform:scale(1);}}
   @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
@@ -226,7 +170,6 @@
 <body>
 <canvas id="riverCanvas"></canvas>
 
-<!-- COVER -->
 <div id="s0" class="screen active">
   <div class="dragon-bg">🐉</div>
   <div class="tag">2026 端午 LUNCH &amp; LEARN</div>
@@ -237,7 +180,6 @@
   </div>
 </div>
 
-<!-- AGENDA -->
 <div id="s1" class="screen">
   <h2 class="agenda-title">今天的流程</h2>
   <p class="agenda-sub">三段式設計，每段 20 分鐘</p>
@@ -256,14 +198,43 @@
   </div>
 </div>
 
-<!-- HOST OPENING -->
+<div id="s3" class="screen">
+  <div class="sec-emoji">🎙️</div>
+  <div class="sec-badge" style="background:var(--red2)">第一段</div>
+  <h2 class="sec-title">划龍舟<br>經驗分享</h2>
+  <p class="sec-time">12:00 – 12:20 ｜ 20 分鐘</p>
+</div>
+
+<div id="sChar" class="screen">
+  <div class="tag">認識主角</div>
+  <div style="display:flex;gap:28px;margin-top:8px;">
+    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:18px;padding:28px 24px;max-width:280px;text-align:center;">
+      <div style="font-size:56px;margin-bottom:12px;">🙋</div>
+      <div style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:var(--gold);margin-bottom:12px;">阿發</div>
+      <div style="font-size:14px;line-height:1.9;color:rgba(255,255,255,0.8);text-align:left;">
+        很期待贏得比賽，但太容易緊張了。<br>一緊張就容易出錯，開始對自己沒信心。<br><br>
+        練習請假十次，有八次是因為太緊張、怕自己做不好。<br><br>
+        總之，今天他來參加比賽了。
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:18px;padding:28px 24px;max-width:280px;text-align:center;">
+      <div style="font-size:56px;margin-bottom:12px;">😤</div>
+      <div style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:var(--red3);margin-bottom:12px;">阿國</div>
+      <div style="font-size:14px;line-height:1.9;color:rgba(255,255,255,0.8);text-align:left;">
+        在隊上已經十年的前輩。<br>太認真看待勝負，態度不饒人。<br><br>
+        說話方式讓很多人離開了隊伍，但他卻不認為有什麼問題。
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:24px;font-size:14px;color:rgba(255,255,255,0.4);">你是小隊長——他們都在這艘龍舟上</p>
+</div>
+
 <div id="s2" class="screen">
   <div class="host-tag">🎙️互動式劇場說明</div>
   <div class="quote-box">
     <div class="qmark">"</div>
     <p class="qtext">
-      今天我們有一個任務：<br>
-      要帶一支龍舟隊划到終點。<br><br>
+      今天我們有一個任務：<br>要帶一支龍舟隊划到終點。<br><br>
       你是龍舟隊的隊長。隊上有一個很努力但很緊張的菜鳥——<em>阿發</em>。<br>
       還有一個講話總是尖酸刻薄的老鳥——<em>阿國</em>。<br><br>
       你的選擇，決定這艘船怎麼走！
@@ -272,46 +243,6 @@
   <div class="host-cue">💡<strong>「我們來看看阿發今天的狀況……」</strong></div>
 </div>
 
-<!-- 第一段 -->
-<div id="s3" class="screen">
-  <div class="sec-emoji">🎙️</div>
-  <div class="sec-badge" style="background:var(--red2)">第一段</div>
-  <h2 class="sec-title">划龍舟<br>經驗分享</h2>
-  <p class="sec-time">12:00 – 12:20 ｜ 20 分鐘</p>
-</div>
-
-<!-- 人物介紹 -->
-<div id="sChar" class="screen">
-  <div class="tag">認識主角</div>
-  <div style="display:flex;gap:28px;margin-top:8px;">
-    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:18px;padding:28px 24px;max-width:280px;text-align:center;">
-      <div style="font-size:56px;margin-bottom:12px;">🙋</div>
-      <div style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:var(--gold);margin-bottom:12px;">阿發</div>
-      <div style="font-size:14px;line-height:1.9;color:rgba(255,255,255,0.8);text-align:left;">
-        很期待贏得比賽，但太容易緊張了。<br>
-        一緊張就容易出錯，<br>
-        開始對自己沒信心。<br><br>
-        練習請假十次，<br>
-        有八次是因為太緊張、<br>
-        怕自己做不好。<br><br>
-        總之，今天他來參加比賽了。
-      </div>
-    </div>
-    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:18px;padding:28px 24px;max-width:280px;text-align:center;">
-      <div style="font-size:56px;margin-bottom:12px;">😤</div>
-      <div style="font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:var(--red3);margin-bottom:12px;">阿國</div>
-      <div style="font-size:14px;line-height:1.9;color:rgba(255,255,255,0.8);text-align:left;">
-        在隊上已經十年的前輩。<br>
-        太認真看待勝負，態度不饒人。<br><br>
-        說話方式讓很多人離開了隊伍<br>
-        但他卻不認為有什麼問題。
-      </div>
-    </div>
-  </div>
-  <p style="margin-top:24px;font-size:14px;color:rgba(255,255,255,0.4);">你是小隊長——他們都在這艘龍舟上</p>
-</div>
-
-<!-- QR -->
 <div id="sQR" class="screen">
   <h2 class="qr-title">📱 加入遊戲</h2>
   <p class="qr-sub">請掃描 QR Code，用手機參與投票</p>
@@ -327,12 +258,10 @@
   </div>
 </div>
 
-<!-- GAME INTRO -->
 <div id="sGameIntro" class="screen">
   <h2 class="gi-title">🐉 你是小隊長</h2>
   <p class="gi-body">五個關卡，每關做一個選擇。<br>
-    <em>你的選擇累積起來，決定龍舟到哪裡。</em><br><br>
-    沒有標準答案</p>
+    <em>你的選擇累積起來，決定龍舟到哪裡。</em><br><br>沒有標準答案</p>
   <div class="chips">
     <div class="chip"><span>🗳️</span>五個關卡各一次投票</div>
     <div class="chip"><span>🏁</span>累積結局，三種結尾</div>
@@ -340,7 +269,7 @@
   </div>
 </div>
 
-<!-- ══ 關卡一 ══ 正確答案：B -->
+<!-- 關卡一 正確:B -->
 <div id="sC1" class="screen">
   <div class="chal-header"><span class="chal-badge" style="background:var(--red2)">關卡一</span></div>
   <h2 class="chal-title">賽前練習——阿發手在抖</h2>
@@ -379,7 +308,7 @@
   </div>
 </div>
 
-<!-- ══ 關卡二 ══ 正確答案：A -->
+<!-- 關卡二 正確:A -->
 <div id="sC2" class="screen">
   <div class="chal-header"><span class="chal-badge" style="background:var(--red2)">關卡二</span></div>
   <h2 class="chal-title">出發前——阿國搶位置</h2>
@@ -418,7 +347,7 @@
   </div>
 </div>
 
-<!-- ══ 關卡三 ══ 正確答案：B -->
+<!-- 關卡三 正確:B -->
 <div id="sC3" class="screen">
   <div class="chal-header"><span class="chal-badge" style="background:var(--red2)">關卡三</span></div>
   <h2 class="chal-title">賽事不順——阿發僵掉了</h2>
@@ -452,11 +381,11 @@
     <div class="res-card res-b" id="rCard3b"><div class="glow"></div>
       <div class="res-hdr"><div class="res-let">B</div><div class="res-opt">「阿發，我感覺到你現在可能需要一點時間？」</div><div class="res-pct" id="rPct3b">—</div></div>
       <div class="res-emoji">👁️😮‍💨🎯</div>
-      <div class="res-outcome">阿發看了你一眼，深呼吸，重新挺直腰桿，說：「今天的確是我失誤了。」。</div></div>
+      <div class="res-outcome">阿發看了你一眼，深呼吸，重新挺直腰桿，說：「今天的確是我失誤了。」</div></div>
   </div>
 </div>
 
-<!-- ══ 關卡四 ══ 正確答案：A -->
+<!-- 關卡四 正確:A -->
 <div id="sC4" class="screen">
   <div class="chal-header"><span class="chal-badge" style="background:var(--red2)">關卡四</span></div>
   <h2 class="chal-title">輸了之後——阿國的情緒</h2>
@@ -495,7 +424,7 @@
   </div>
 </div>
 
-<!-- ══ 關卡五 ══ 正確答案：B -->
+<!-- 關卡五 正確:B -->
 <div id="sC5" class="screen">
   <div class="chal-header"><span class="chal-badge" style="background:var(--red2)">關卡五</span></div>
   <h2 class="chal-title">散場——阿發背包包要走了</h2>
@@ -532,7 +461,6 @@
   </div>
 </div>
 
-<!-- 想一響 -->
 <div id="sLanding" class="screen">
   <p class="land-phrase">
     當我們做事情卡住時，<br>
@@ -542,32 +470,27 @@
   <p class="land-sub">🐉 問對一句話，行動就會默默展開</p>
 </div>
 
-<!-- 教練式對話 GROW教學 -->
 <div id="sGROW" class="screen grow-screen">
   <div class="grow-title">🌱 這就是 GROW Model</div>
   <p class="grow-sub">剛才五關裡，你體驗的就是這四個問法</p>
   <div class="grow-grid">
     <div class="grow-card">
-      <div class="g-letter">G</div>
-      <div class="g-word">Goal · 目標</div>
+      <div class="g-letter">G</div><div class="g-word">Goal · 目標</div>
       <div class="g-q">「你想達到什麼？」</div>
       <div class="g-ex">幫他想清楚，自己要的是什麼</div>
     </div>
     <div class="grow-card">
-      <div class="g-letter">R</div>
-      <div class="g-word">Reality · 現狀</div>
+      <div class="g-letter">R</div><div class="g-word">Reality · 現狀</div>
       <div class="g-q">「現在的狀況是什麼？」</div>
-      <div class="g-ex">「去年找到感覺那段你還記得嗎？」「哪一段划得還不錯？」</div>
+      <div class="g-ex">「去年找到手感那次你還記得嗎？」「哪一段划得還不錯？」</div>
     </div>
     <div class="grow-card">
-      <div class="g-letter">O</div>
-      <div class="g-word">Options · 選項</div>
+      <div class="g-letter">O</div><div class="g-word">Options · 選項</div>
       <div class="g-q">「有哪些可能的做法？」</div>
       <div class="g-ex">「你覺得下次想練哪個部分？」</div>
     </div>
     <div class="grow-card">
-      <div class="g-letter">W</div>
-      <div class="g-word">Will · 行動意願</div>
+      <div class="g-letter">W</div><div class="g-word">Will · 行動意願</div>
       <div class="g-q">「你決定做什麼？」</div>
       <div class="g-ex">讓他自己說出下一步——那個「好」才算數</div>
     </div>
@@ -575,7 +498,6 @@
   <p class="grow-tagline">問對一句話，行動就會默默展開。</p>
 </div>
 
-<!-- FINAL ENDING -->
 <div id="sFinal" class="screen">
   <div class="f-emoji" id="fEmoji">🏆</div>
   <h2 class="f-title" id="fTitle"></h2>
@@ -583,7 +505,6 @@
   <p class="f-score" id="fScore"></p>
 </div>
 
-<!-- 第三段 -->
 <div id="sS3" class="screen">
   <div class="sec-emoji">💡</div>
   <div class="sec-badge" style="background:var(--teal)">第三段</div>
@@ -591,15 +512,13 @@
   <p class="sec-time">12:40 – 13:00 ｜ 20 分鐘</p>
 </div>
 
-<!-- CLOSE -->
 <div id="sClose" class="screen">
   <div class="c-dragon">🐉</div>
   <h2 class="c-title">共同划向同一個目標</h2>
   <p class="c-sub">感謝今天一起划船的每一位隊友</p>
-<br>你就是艾立這艘龍舟上最好的划手。</em></p>
+  <p class="c-tag"><em>你就是艾立這艘龍舟上最好的划手。</em></p>
 </div>
 
-<!-- HOST BAR -->
 <div id="hostBar">
   <span id="phaseLabel">封面</span>
   <span id="liveCount">👥 0</span>
@@ -626,7 +545,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db  = getDatabase(app);
 
-// 正確答案：關卡1=b, 2=a, 3=b, 4=a, 5=b
 const CORRECT = {1:'b', 2:'a', 3:'b', 4:'a', 5:'b'};
 
 const ENDINGS = [
@@ -636,33 +554,33 @@ const ENDINGS = [
 ];
 
 const SLIDES = [
-  { id:'s0',        label:'封面',       note:'按「下一頁」開始',                    phase:null,                   action:'下一頁 →' },
-  { id:'s1',        label:'議程',       note:'說明三段架構',                        phase:null,                   action:'下一頁 →' },
-  { id:'s3',        label:'第一段',     note:'邀請分享者上場',                      phase:null,                   action:'下一頁 →' },
-  { id:'sChar',     label:'人物介紹',   note:'介紹阿發和阿國，銜接第二段',           phase:null,                   action:'下一頁 →' },
-  { id:'s2',        label:'開場台詞',   note:'說完後帶大家掃QR',                    phase:null,                   action:'下一頁 →' },
-  { id:'sQR',       label:'加入遊戲',   note:'讓大家掃 QR Code 加入',               phase:{phase:'wait',round:1}, action:'開始遊戲 →' },
-  { id:'sGameIntro',label:'遊戲說明',   note:'說明五關規則',                        phase:null,                   action:'進入關卡一 →' },
-  { id:'sC1',       label:'關卡一情境', note:'念完情境後按「開放投票」',             phase:{phase:'show',round:1}, action:'開放投票 →' },
-  { id:'sV1',       label:'關卡一投票', note:'票數即時更新中，看差不多按揭曉',       phase:{phase:'vote',round:1}, action:'揭曉結局 →' },
-  { id:'sR1',       label:'關卡一結局', note:'龍舟動畫自動跑',                      phase:{phase:'result',round:1},action:'下一關 →' },
-  { id:'sC2',       label:'關卡二情境', note:'念完情境後按「開放投票」',             phase:{phase:'show',round:2}, action:'開放投票 →' },
-  { id:'sV2',       label:'關卡二投票', note:'票數即時更新中',                      phase:{phase:'vote',round:2}, action:'揭曉結局 →' },
-  { id:'sR2',       label:'關卡二結局', note:'龍舟動畫自動跑',                      phase:{phase:'result',round:2},action:'下一關 →' },
-  { id:'sC3',       label:'關卡三情境', note:'念完情境後按「開放投票」',             phase:{phase:'show',round:3}, action:'開放投票 →' },
-  { id:'sV3',       label:'關卡三投票', note:'票數即時更新中',                      phase:{phase:'vote',round:3}, action:'揭曉結局 →' },
-  { id:'sR3',       label:'關卡三結局', note:'龍舟動畫自動跑',                      phase:{phase:'result',round:3},action:'下一關 →' },
-  { id:'sC4',       label:'關卡四情境', note:'念完情境後按「開放投票」',             phase:{phase:'show',round:4}, action:'開放投票 →' },
-  { id:'sV4',       label:'關卡四投票', note:'票數即時更新中',                      phase:{phase:'vote',round:4}, action:'揭曉結局 →' },
-  { id:'sR4',       label:'關卡四結局', note:'龍舟動畫自動跑',                      phase:{phase:'result',round:4},action:'下一關 →' },
-  { id:'sC5',       label:'關卡五情境', note:'念完情境後按「開放投票」',             phase:{phase:'show',round:5}, action:'開放投票 →' },
-  { id:'sV5',       label:'關卡五投票', note:'票數即時更新中',                      phase:{phase:'vote',round:5}, action:'揭曉結局 →' },
-  { id:'sR5',       label:'關卡五結局', note:'最後一關結局',                        phase:{phase:'result',round:5},action:'公布總結局 →' },
-  { id:'sFinal',    label:'總結局',     note:'根據五關正確票數自動決定結局',         phase:{phase:'final',round:5},action:'公布金句 →' },
-  { id:'sLanding',  label:'金句',       note:'停留幾秒讓大家記下來',               phase:null,                   action:'GROW教學 →' },
-  { id:'sGROW',     label:'GROW教學',   note:'帶大家看四個問法',                   phase:{phase:'souvenir',round:5}, action:'下一頁 →' },
-  { id:'sS3',       label:'第三段',     note:'邀請主管上場',                       phase:null,                   action:'下一頁 →' },
-  { id:'sClose',    label:'結尾',       note:'主持人說結語，端午節快樂！',           phase:null,                   action:'完成 ✓' },
+  { id:'s0',        label:'封面',       note:'按「下一頁」開始',                   phase:null,                    action:'下一頁 →' },
+  { id:'s1',        label:'議程',       note:'說明三段架構',                       phase:null,                    action:'下一頁 →' },
+  { id:'s3',        label:'第一段',     note:'邀請分享者上場',                     phase:null,                    action:'下一頁 →' },
+  { id:'sChar',     label:'人物介紹',   note:'介紹阿發和阿國，銜接第二段',          phase:null,                    action:'下一頁 →' },
+  { id:'s2',        label:'開場台詞',   note:'說完後帶大家掃QR',                   phase:null,                    action:'下一頁 →' },
+  { id:'sQR',       label:'加入遊戲',   note:'讓大家掃 QR Code 加入',              phase:{phase:'wait',round:1},  action:'開始遊戲 →' },
+  { id:'sGameIntro',label:'遊戲說明',   note:'說明五關規則',                       phase:null,                    action:'進入關卡一 →' },
+  { id:'sC1',       label:'關卡一情境', note:'念完情境後按「開放投票」',            phase:{phase:'show',round:1},  action:'開放投票 →' },
+  { id:'sV1',       label:'關卡一投票', note:'票數即時更新中，看差不多按揭曉',      phase:{phase:'vote',round:1},  action:'揭曉結局 →' },
+  { id:'sR1',       label:'關卡一結局', note:'龍舟動畫自動跑',                     phase:{phase:'result',round:1},action:'下一關 →' },
+  { id:'sC2',       label:'關卡二情境', note:'念完情境後按「開放投票」',            phase:{phase:'show',round:2},  action:'開放投票 →' },
+  { id:'sV2',       label:'關卡二投票', note:'票數即時更新中',                     phase:{phase:'vote',round:2},  action:'揭曉結局 →' },
+  { id:'sR2',       label:'關卡二結局', note:'龍舟動畫自動跑',                     phase:{phase:'result',round:2},action:'下一關 →' },
+  { id:'sC3',       label:'關卡三情境', note:'念完情境後按「開放投票」',            phase:{phase:'show',round:3},  action:'開放投票 →' },
+  { id:'sV3',       label:'關卡三投票', note:'票數即時更新中',                     phase:{phase:'vote',round:3},  action:'揭曉結局 →' },
+  { id:'sR3',       label:'關卡三結局', note:'龍舟動畫自動跑',                     phase:{phase:'result',round:3},action:'下一關 →' },
+  { id:'sC4',       label:'關卡四情境', note:'念完情境後按「開放投票」',            phase:{phase:'show',round:4},  action:'開放投票 →' },
+  { id:'sV4',       label:'關卡四投票', note:'票數即時更新中',                     phase:{phase:'vote',round:4},  action:'揭曉結局 →' },
+  { id:'sR4',       label:'關卡四結局', note:'龍舟動畫自動跑',                     phase:{phase:'result',round:4},action:'下一關 →' },
+  { id:'sC5',       label:'關卡五情境', note:'念完情境後按「開放投票」',            phase:{phase:'show',round:5},  action:'開放投票 →' },
+  { id:'sV5',       label:'關卡五投票', note:'票數即時更新中',                     phase:{phase:'vote',round:5},  action:'揭曉結局 →' },
+  { id:'sR5',       label:'關卡五結局', note:'最後一關結局',                       phase:{phase:'result',round:5},action:'公布總結局 →' },
+  { id:'sFinal',    label:'總結局',     note:'根據五關正確票數自動決定結局',        phase:{phase:'final',round:5}, action:'公布金句 →' },
+  { id:'sLanding',  label:'金句',       note:'停留幾秒讓大家記下來',              phase:null,                    action:'GROW教學 →' },
+  { id:'sGROW',     label:'GROW教學',   note:'帶大家看四個問法',                  phase:{phase:'souvenir',round:5},action:'下一頁 →' },
+  { id:'sS3',       label:'第三段',     note:'邀請主管上場',                      phase:null,                    action:'下一頁 →' },
+  { id:'sClose',    label:'結尾',       note:'主持人說結語，端午節快樂！',          phase:null,                    action:'完成 ✓' },
 ];
 
 let current = 0;
@@ -685,15 +603,11 @@ async function goTo(idx) {
   const sl = SLIDES[current];
   document.getElementById(prevId).classList.remove('active');
   document.getElementById(sl.id).classList.add('active');
-
   if (sl.phase) await set(ref(db,'game/state'), sl.phase);
-
-  // 結局動畫
   for (let r=1;r<=5;r++) {
     if (sl.id===`sR${r}`) setTimeout(()=>animateResult(r), 400);
   }
   if (sl.id==='sFinal') setTimeout(()=>showFinalEnding(), 400);
-
   document.getElementById('hostNote').textContent = sl.note;
   document.getElementById('phaseLabel').textContent = sl.label;
   document.getElementById('mainBtn').textContent = sl.action;
@@ -714,7 +628,6 @@ document.getElementById('resetBtn').addEventListener('click', async () => {
   goTo(0);
 });
 
-// Firebase vote listeners
 for (let r=1;r<=5;r++) {
   onValue(ref(db,`game/votes/round${r}`), snap => {
     const v = snap.val()||{a:0,b:0};
@@ -722,7 +635,6 @@ for (let r=1;r<=5;r++) {
   });
 }
 
-// 即時人數：監聽 presence
 onValue(ref(db,'game/presence'), snap => {
   const data = snap.val()||{};
   const count = Object.keys(data).length;
@@ -737,10 +649,10 @@ function updateBars(round, a, b) {
   const pB = total>0 ? 100-pA : 0;
   document.getElementById(`vFill${round}a`).style.height = pA+'%';
   document.getElementById(`vFill${round}b`).style.height = pB+'%';
-  document.getElementById(`vPct${round}a`).textContent  = total>0 ? pA+'%' : '—';
-  document.getElementById(`vPct${round}b`).textContent  = total>0 ? pB+'%' : '—';
-  document.getElementById(`vCnt${round}a`).textContent  = a+' 票';
-  document.getElementById(`vCnt${round}b`).textContent  = b+' 票';
+  document.getElementById(`vPct${round}a`).textContent = total>0 ? pA+'%' : '—';
+  document.getElementById(`vPct${round}b`).textContent = total>0 ? pB+'%' : '—';
+  document.getElementById(`vCnt${round}a`).textContent = a+' 票';
+  document.getElementById(`vCnt${round}b`).textContent = b+' 票';
   document.getElementById(`vTotal${round}`).textContent = `共 ${total} 人投票`;
 }
 
@@ -749,28 +661,19 @@ async function animateResult(round) {
   const v = snap.val()||{a:0,b:0};
   const a = v.a||0, b = v.b||0;
   const total = a+b;
-
-  // 計算百分比，0票時顯示—
   const pA = total>0 ? Math.round(a/total*100) : 0;
   const pB = total>0 ? 100-pA : 0;
   document.getElementById(`rPct${round}a`).textContent = total>0 ? pA+'%' : '—';
   document.getElementById(`rPct${round}b`).textContent = total>0 ? pB+'%' : '—';
-
-  // 判斷贏家：同票時兩邊都顯示
   const tieOrNoVotes = (a===b);
   const winA = !tieOrNoVotes && a>b;
   const winB = !tieOrNoVotes && b>a;
-
-  // 隱藏輸的那一邊（同票時都顯示）
   document.getElementById(`rCard${round}a`).classList.toggle('hidden', winB);
   document.getElementById(`rCard${round}b`).classList.toggle('hidden', winA);
-
-  // 龍舟動畫
   setTimeout(() => {
     document.getElementById(`boat${round}a`).style.left = winB ? '35%' : '80%';
     document.getElementById(`boat${round}b`).style.left = winA ? '35%' : '80%';
   }, 200);
-
   setTimeout(() => {
     document.getElementById(`rCard${round}a`).classList.toggle('winning', winA||tieOrNoVotes);
     document.getElementById(`rCard${round}b`).classList.toggle('winning', winB||tieOrNoVotes);
@@ -794,7 +697,6 @@ async function showFinalEnding() {
   document.getElementById('fScore').textContent = `這場選對了 ${correctCount} 關`;
 }
 
-// QR
 function setupQR() {
   const playerURL = window.location.href.replace('host.html','player.html');
   document.getElementById('qrUrlText').textContent = playerURL;
@@ -802,7 +704,6 @@ function setupQR() {
 }
 setupQR();
 
-// River canvas
 const canvas = document.getElementById('riverCanvas');
 const ctx = canvas.getContext('2d');
 let W,H,t=0;
