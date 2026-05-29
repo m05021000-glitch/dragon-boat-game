@@ -6,25 +6,25 @@
 <title>🐉 端午龍舟投票</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;700&display=swap');
-  :root{--red:#B22222;--red2:#D94040;--gold:#C9973A;--gold2:#F0C060;--teal:#1A7A6E;--teal2:#2AA898;--dark:#1A0A00;--white:#FFFFFF;}
+  :root{--red:#B22222;--red2:#D94040;--gold:#A0522D;--gold2:#D4762A;--teal:#117A65;--teal2:#1ABC9C;--dark:#FAF6EF;--white:#1A1208;}
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-  html,body{width:100%;min-height:100vh;background:var(--dark);color:var(--white);font-family:'Noto Sans TC',sans-serif;overflow-x:hidden;}
+  html,body{width:100%;min-height:100vh;background:var(--dark);color:#1A1208;font-family:'Noto Sans TC',sans-serif;overflow-x:hidden;}
   #riverBg{position:fixed;inset:0;z-index:0;pointer-events:none;}
   #riverBg canvas{width:100%;height:100%;}
   .page{position:relative;z-index:1;min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;}
   .page.active{display:flex;}
   #pageWait .dragon{font-size:80px;animation:float 3s ease-in-out infinite;}
   #pageWait h1{font-family:'Noto Serif TC',serif;font-size:28px;font-weight:900;color:var(--gold);margin:16px 0 8px;}
-  #pageWait p{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;}
+  #pageWait p{font-size:15px;color:rgba(0,0,0,0.55);line-height:1.7;}
   #pageWait .pulse-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;margin-top:20px;animation:pulse 1.5s infinite;}
   #pageShow .round-badge{font-size:12px;font-weight:700;letter-spacing:2px;padding:5px 18px;border-radius:20px;margin-bottom:16px;display:inline-block;background:var(--red);}
   #pageShow .show-title{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:900;margin-bottom:16px;line-height:1.4;color:var(--gold);}
-  #pageShow .situation{background:rgba(255,255,255,0.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:13px 15px;font-size:13px;line-height:1.9;color:rgba(255,255,255,0.85);margin-bottom:14px;text-align:left;}
+  #pageShow .situation{background:rgba(0,0,0,0.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:13px 15px;font-size:13px;line-height:1.9;color:rgba(0,0,0,0.8);margin-bottom:14px;text-align:left;}
   #pageShow .situation .scene-tag{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:2px;margin-bottom:6px;display:block;}
-  #pageShow .wait-vote{font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-top:10px;animation:pulse 2s infinite;}
+  #pageShow .wait-vote{font-size:13px;color:rgba(0,0,0,0.4);letter-spacing:1px;margin-top:10px;animation:pulse 2s infinite;}
   #pageVote .round-badge{font-size:12px;font-weight:700;letter-spacing:2px;padding:5px 18px;border-radius:20px;margin-bottom:14px;display:inline-block;background:var(--red);}
   #pageVote .q-title{font-family:'Noto Serif TC',serif;font-size:19px;font-weight:900;margin-bottom:14px;line-height:1.4;}
-  #pageVote .situation{background:rgba(255,255,255,0.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:11px 13px;font-size:12px;line-height:1.8;color:rgba(255,255,255,0.8);margin-bottom:18px;text-align:left;}
+  #pageVote .situation{background:rgba(0,0,0,0.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:11px 13px;font-size:12px;line-height:1.8;color:rgba(0,0,0,0.75);margin-bottom:18px;text-align:left;}
   #pageVote .situation .scene-tag{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:2px;margin-bottom:5px;display:block;}
   .vote-btn{width:100%;padding:15px 16px;border-radius:14px;border:2px solid transparent;font-size:14px;font-family:'Noto Sans TC',sans-serif;font-weight:700;cursor:pointer;margin-bottom:11px;text-align:left;line-height:1.5;transition:transform 0.15s;}
   .vote-btn:active{transform:scale(0.97);}
@@ -39,11 +39,11 @@
   .btn-b.selected{border-color:var(--teal2);box-shadow:0 0 0 3px rgba(42,168,152,0.25);}
   #pageDone .big-emoji{font-size:72px;animation:bounceIn 0.6s both;}
   #pageDone h2{font-family:'Noto Serif TC',serif;font-size:24px;font-weight:900;color:var(--gold);margin:16px 0 10px;}
-  #pageDone p{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.7;}
-  #pageDone .your-vote{margin-top:20px;background:rgba(255,255,255,0.07);border-radius:12px;padding:14px 20px;font-size:14px;}
+  #pageDone p{font-size:15px;color:rgba(0,0,0,0.6);line-height:1.7;}
+  #pageDone .your-vote{margin-top:20px;background:rgba(0,0,0,0.07);border-radius:12px;padding:14px 20px;font-size:14px;}
   #pageDone .your-vote span{font-weight:700;color:var(--gold2);}
   #pageResult h2{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:900;color:var(--gold);margin-bottom:4px;}
-  #pageResult .result-sub{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:18px;}
+  #pageResult .result-sub{font-size:13px;color:rgba(0,0,0,0.45);margin-bottom:18px;}
   .mini-result{width:100%;border-radius:14px;padding:15px;margin-bottom:11px;border:2px solid transparent;text-align:left;transition:opacity 0.5s;}
   .mini-result.hidden{display:none;}
   .mini-result-a{background:rgba(139,26,26,0.3);border-color:rgba(178,34,34,0.5);}
@@ -55,20 +55,20 @@
   .mini-result-a .r-letter{background:var(--red);}
   .mini-result-b .r-letter{background:var(--teal);}
   .mini-result .r-pct{font-size:22px;font-weight:900;margin-left:auto;}
-  .mini-result .r-outcome{font-size:12px;line-height:1.6;color:rgba(255,255,255,0.85);}
+  .mini-result .r-outcome{font-size:12px;line-height:1.6;color:rgba(0,0,0,0.8);}
   #pageFinal .final-emoji{font-size:72px;animation:bounceIn 0.6s both;}
   #pageFinal h2{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:900;color:var(--gold);margin:14px 0 10px;line-height:1.4;}
-  #pageFinal .final-body{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.9;max-width:300px;white-space:pre-line;}
-  #pageFinal .score-badge{margin-top:18px;background:rgba(201,151,58,0.15);border:1px solid rgba(201,151,58,0.4);border-radius:12px;padding:10px 18px;font-size:13px;color:rgba(255,255,255,0.55);}
+  #pageFinal .final-body{font-size:14px;color:rgba(0,0,0,0.7);line-height:1.9;max-width:300px;white-space:pre-line;}
+  #pageFinal .score-badge{margin-top:18px;background:rgba(201,151,58,0.15);border:1px solid rgba(201,151,58,0.4);border-radius:12px;padding:10px 18px;font-size:13px;color:rgba(0,0,0,0.55);}
   #pageSouvenir .sv-ending{background:rgba(201,151,58,0.12);border:1px solid rgba(201,151,58,0.35);border-radius:14px;padding:14px 18px;width:100%;max-width:320px;text-align:center;margin-bottom:14px;}
   #pageSouvenir .sv-emoji{font-size:40px;margin-bottom:6px;}
   #pageSouvenir .sv-etitle{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:900;color:var(--gold);margin-bottom:4px;}
-  #pageSouvenir .sv-ebody{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.7;white-space:pre-line;}
+  #pageSouvenir .sv-ebody{font-size:12px;color:rgba(0,0,0,0.6);line-height:1.7;white-space:pre-line;}
   #pageSouvenir .grow-mini-title{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:8px;text-align:center;}
   #pageSouvenir .grow-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:320px;margin-bottom:12px;}
-  #pageSouvenir .grow-cell{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 6px;text-align:center;}
+  #pageSouvenir .grow-cell{background:rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.1);border-radius:10px;padding:10px 6px;text-align:center;}
   #pageSouvenir .gl{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:900;color:var(--gold);}
-  #pageSouvenir .gw{font-size:10px;color:rgba(255,255,255,0.45);margin:2px 0 4px;}
+  #pageSouvenir .gw{font-size:10px;color:rgba(0,0,0,0.45);margin:2px 0 4px;}
   #pageSouvenir .gq{font-size:10px;color:var(--gold2);line-height:1.4;}
   #pageSouvenir .sv-tagline{font-family:'Noto Serif TC',serif;font-size:14px;font-weight:700;color:var(--gold2);text-align:center;margin-bottom:12px;}
   #pageSouvenir .sv-hint{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;animation:pulse 2s infinite;}
@@ -336,7 +336,7 @@ resize(); window.addEventListener('resize',resize);
 function drawRiver(){
   ctx.clearRect(0,0,W,H);
   const g=ctx.createLinearGradient(0,0,0,H);
-  g.addColorStop(0,'#0D0500');g.addColorStop(1,'#0A1A18');
+  g.addColorStop(0,'#FAF6EF');g.addColorStop(1,'#E8F5F0');
   ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
   for(let i=0;i<4;i++){
     ctx.beginPath();
@@ -345,7 +345,7 @@ function drawRiver(){
       const py=y+amp*Math.sin((x/wl)*Math.PI*2+t*spd+i*60);
       x===0?ctx.moveTo(x,py):ctx.lineTo(x,py);
     }
-    ctx.strokeStyle=`rgba(42,168,152,${0.05+i*0.01})`;ctx.lineWidth=1.5;ctx.stroke();
+    ctx.strokeStyle=`rgba(17,122,101,${0.15+i*0.03})`;ctx.lineWidth=1.5;ctx.stroke();
   }
   t+=0.015;requestAnimationFrame(drawRiver);
 }
